@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Pac Lenguaje Marcas</title>
+        <meta name="description" content="Practica UF1 Lenguajes de marcas y sistemas de gestión de infomación"/>
+        <meta name="autor" content="David Nuñez Merino"/>
+        <style>
+            body {
+                font-family: Tahoma;
+            }
+            h1 {
+                font-family: Tahoma;
+                color: #fff;
+                background-color: #00aeef;
+                padding: 10px;
+            }
+            h2 {
+                font-family: Tahoma;
+                color: #fff;
+                background-color: #00aeef;
+                padding: 5px;
+
+
+             }
+             table{
+                 text-align: center;
+                
+                 
+             }
+             .button {
+                background-color: #00aeef;
+                border: none;
+                color: white;
+                padding: 11px 14px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 12px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Actividad de desarrollo (UF1)</h1>
+        </header>
+            <h3>Ejercicio 1</h3>
+        <p>
+          <caption>Crear una tabla con las siguientes características:</caption> 
+            <ul>
+                <li>Debe ocupar el 60% del ancho de página</li> 
+                <li>Debe estar centrada en medio de la página</li> 
+                <li>Todo su contenido debe estar centrado</li> 
+                <li>Añadir un margen en cada celda de 5px</li>
+                <li>Sin bordes</li> 
+            </ul>
+            <header>
+                <h2 style="padding: 16px;">El tiempo</h2>
+            </header>
+            <table style="width: 60%; margin: auto; width: auto;">
+                <caption>Pronóstico del tíempo en tres días</caption>
+                <tr>
+                    <th></th>
+                    <th style="background-color: #00aeef; color: #fff;">Hoy</th>
+                    <th style="background-color: #00aeef; color: #fff;">Mañana</th>
+                    <th style="background-color: #00aeef; color: #fff;">Domingo</th>
+                </tr>
+                <tr>
+                    <td style="background-color: #00aeef; color: #fff;">Temperatura máxima</td>
+                    <td>15º</td>
+                    <td>16º</td>
+                    <td>17º</td> 
+                </tr>
+                <tr>
+                    <td style="background-color: #00aeef; color: #fff;">Temperatura mínima</td>
+                    <td>13º</td>
+                    <td>12º</td>
+                    <td>14º</td> 
+                </tr>
+                <tr>
+                    <td style="background-color: #00aeef; color: #fff;">Velocidad viento</td>
+                    <td>35km/h</td>
+                    <td>33km/h</td>
+                    <td>25km/h</td> 
+                </tr>
+            </table>
+        </p>
+            <h3>Ejercicio 2:</h3>
+        <p>
+            <caption> Crear una lista que muestre distintos tipos de letra y además aplique el tipo de letra nombrado, debe quedar lo más parecido posible al ejemplo.</caption>
+            <header>
+                <h2>Lista de fuentes html</h2>
+            </header>
+            <ul>
+                <li style="font-family: Arial;">Arial</li>
+                <li style="font-family: Comic Sans MS;">Comic Sans MS</li>
+                <li style="font-family: Georgia;">Georgia</li>
+                <li style="font-family: Impact;">Impact</li>
+                <li style="font-family: 'Times New Roman';">Times New Roman</li>
+                <li style="font-family: Verdana;">Verdana</li>
+            </ul>
+        </p>
+            <h3>Ejercicio 3</h3>
+        <p>
+            <caption>Crear un formulario con las siguientes características:</caption>
+
+            <ul>
+                <li>Nombre debe ser de tipo texto</li> 
+                <li>La contraseña debe ocultar el texto escrito</li> 
+                <li>La fecha debe permitir abrir el calendario para seleccionar un día en concreto</li> 
+                <li>El mensaje debe ser un área de texto</li>
+                <li>Debe contener un validador para aceptar los términos y condiciones</li> 
+                <li>Un botón aplicando estilo</li>
+            </ul>
+            <header>
+                <h2>Formulario de contacto</h2>
+            </header>
+            
+            <form> 
+             <fieldset>
+            <legend>Contacto</legend>
+            <form action="ejemplo.php" method="get">
+                <p>Nombre: <input type="text" name="nombre" size="40"></p>
+                <p>Contraseña: <input type="password" name="contrasena"></p>
+                <p>Teléfono: <input type="tel" name="telefono"></p>
+                <p>Fecha: <input type="date" name="fecha" max="2021-12-31" min="2021-01-01" step=1 value="2021-02-18" ></p>
+                <p>Mensaje: <textarea name="texto" rows="4" cols="30">Mensaje de texto</textarea></p>
+                <p><input type="checkbox" name="casilla" checked>Acepto los terminos y condiciones</p>
+                <p></p><input type="submit" value="Enviar" class="button"></p>
+              </fieldset>
+            </form>
+        </p>
+    
+    </body>
+</html>
