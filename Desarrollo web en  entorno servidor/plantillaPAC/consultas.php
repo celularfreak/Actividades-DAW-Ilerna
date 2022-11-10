@@ -3,57 +3,154 @@
 	include "conexion.php";
 
 	function tipoUsuario($nombre, $correo){
-		// Completar...
+		$conexion = crearConexion();
+		
+		if (esSuperadmin($nombre, $correo)) {
+			return "superadmin";
+		} else {
+			$consulta = "SELECT FullName, Email, Enabled FROM user WHERE FullName = '$nombre' AND Email = '$correo'";
+			$resultado = mysqli_query($conexion, $consulta);
+
+			cerrarConexion($conexion);
+
+			if ($datos = mysqli_fetch_array($resultado)) {
+				if ($datos["Enabled"] == 0){
+					return "registrado";
+				} else if ($datos["Enabled"] == 1){
+					return "autorizado";
+				}
+			} else {
+				return "no registrado";
+			}
+		}
 	}
 
 
 	function esSuperadmin($nombre, $correo){
-		// Completar...
+		$conexion = crearConexion();
+
+		$consulta = "SELECT user.UserID FROM user INNER JOIN setup ON user.UserID = setup.SuperAdminID WHERE user.FullName = '$nombre' AND user.Email = '$correo'";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		if ($datos = mysqli_fetch_array($resultado)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
+	function getListaUsuarios() {
+		$conexion = crearConexion();
+
+		$consulta = "SELECT FullName, Email, Enabled FROM user";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		return $resultado;
+	}
 
 	function getPermisos() {
-		// Completar...	
+		$conexion = crearConexion();
+
+		$consulta = "SELECT Autenticación FROM setup";
+		$resultado = mysqli_fetch_assoc(mysqli_query($conexion, $consulta));
+
+		cerrarConexion($conexion);
+
+		return $resultado["Autenticación"];
 	}
 
 
 	function cambiarPermisos() {
-		// Completar...	
+		$permisos = getPermisos();
+
+		$conexion = crearConexion();
+
+		if ($permisos == 1) {
+			$consulta = "UPDATE setup SET Autenticación = 0";
+		} else {
+			$consulta = "UPDATE setup SET Autenticación = 1";
+		}
+
+		//$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
 	}
 
 
 	function getCategorias() {
-		// Completar...	
-	}
+		$conexion = crearConexion();
 
+		$consulta = "SELECT * FROM category";
+		$resultado = mysqli_query($conexion, $consulta);
 
-	function getListaUsuarios() {
-		// Completar...	
+		cerrarConexion($conexion);
+
+		return $resultado;
 	}
 
 
 	function getProducto($ID) {
-		// Completar...	
+		$conexion = crearConexion();
+
+		$consulta = "SELECT * FROM product WHERE ProductID = $ID";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		return $resultado;
 	}
 
 
 	function getProductos($orden) {
-		// Completar...	
+		$conexion = crearConexion();
+
+		$consulta = "SELECT product.ProductID, product.Name, product.Cost product.Price, category.Name as Categoria FROM product INNER JOIN category WHERE 
+		product.CategoryID = category.CategoryID ORDER BY $orden";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		return $resultado;
 	}
 
 
 	function anadirProducto($nombre, $coste, $precio, $categoria) {
-		// Completar...	
+		$conexion = crearConexion();
+
+		$consulta = "INSERT INTO product (Name, Cost, Price, CategoryID) VALUES ('$nombre', $coste, $precio, $categoria)";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		return $resultado;
 	}
 
 
 	function borrarProducto($id) {
-		// Completar...	
+		$conexion = crearConexion();
+
+		$consulta = "DELETE FROM product WHERE ProductID = $id";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		return $resultado;
 	}
 
 
 	function editarProducto($id, $nombre, $coste, $precio, $categoria) {
-		// Completar...	
+		$conexion = crearConexion();
+
+		$consulta = "UPDATE product SET Name = '$nombre', Cost = $coste, Price = $precio, CategoryID = $categoria WHERE ProductID = $id";
+		$resultado = mysqli_query($conexion, $consulta);
+
+		cerrarConexion($conexion);
+
+		return $resultado;
 	}
 
 ?>

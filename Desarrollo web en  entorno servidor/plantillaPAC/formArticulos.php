@@ -13,6 +13,13 @@
 	
 	?>
 
+	<?php
+
+		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != 'autorizado')) {
+			echo "No tienes permisos para acceder a esta página.";
+
+	?>
+		
 	
 </body>
 </html>
