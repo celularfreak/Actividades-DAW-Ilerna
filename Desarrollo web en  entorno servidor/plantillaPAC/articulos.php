@@ -25,16 +25,16 @@
 		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != 'autorizado')) {
 			echo "No tienes permisos para acceder a esta página.";
 		} else {
-			if (!isset($_POST["orden"])) {
+			if (!isset($_GET["orden"])) {
 				$orden = "ProductID";
 			} else {
-				$orden = $_POST["orden"];
+				$orden = $_GET["orden"];
 			}
 			pintaProductos($orden);
 		}
 	?>
 
-	<a href="index.php"> Volver </a>
+	<a href="index.php">Volver</a>
 	
 </body>
 </html>

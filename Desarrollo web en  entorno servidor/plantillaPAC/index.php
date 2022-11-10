@@ -13,10 +13,10 @@
 
 	?>
 
-	<form action = "index.php" method = "POST">
-		<p> <label for = "usuario"> Usuario: </label> <input type = "text" name = "usuario"</p>
-		<p> <label for = "correo"> Correo: </label> <input type = "text" name = "correo"</p>
-		<p> <input type = "submit" name = "Entrar"</p>
+	<form action="index.php" method="POST">
+		<p><label for="usuario">Usuario: </label><input type ="text" name="usuario"></p>
+		<p><label for="correo">Correo: </label><input type ="email" name="correo"></p>
+		<p><input type="submit" name="Entrar"></p>
 	</form>
 
 	<?php
@@ -24,13 +24,13 @@
 			$nombre = $_POST['usuario'];
 			$correo = $_POST['correo'];
 			$tipoUsuario = tipoUsuario($nombre, $correo);
-			setcookie("perfil", $tipoUsuario, time() + 500);
+			setcookie("datos", $tipoUsuario, time()+500);
 			switch ($tipoUsuario) {
 				case 'superadmin':
-					echo "Bienvenido $nombre. Pulsa <a href = 'usuarios.php'> aquí </a> para ver los usuarios.";
+					echo "Bienvenido $nombre. Pulsa <a href='usuarios.php'>aquí</a> para ver los usuarios.";
 					break;
 				case 'autorizado' :
-					echo "Bienvenido $nombre. Pulsa <a href = 'usuarios.php'> aquí </a> para ver los usuarios.";
+					echo "Bienvenido $nombre. Pulsa <a href='articulos.php'>aquí</a> para entrar al panel de articulos.";
 					break;
 				case 'registrado' :
 					echo "Bienvenido $nombre. No tiene los permisos para acceder.";
@@ -40,6 +40,7 @@
 					break;
 			}
 		}
+	
 	?>
 		
 </body>

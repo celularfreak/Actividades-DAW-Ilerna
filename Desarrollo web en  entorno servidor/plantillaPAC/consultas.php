@@ -9,6 +9,7 @@
 			return "superadmin";
 		} else {
 			$consulta = "SELECT FullName, Email, Enabled FROM user WHERE FullName = '$nombre' AND Email = '$correo'";
+			
 			$resultado = mysqli_query($conexion, $consulta);
 
 			cerrarConexion($conexion);
@@ -29,17 +30,17 @@
 	function esSuperadmin($nombre, $correo){
 		$conexion = crearConexion();
 
-		$consulta = "SELECT user.UserID FROM user INNER JOIN setup ON user.UserID = setup.SuperAdminID WHERE user.FullName = '$nombre' AND user.Email = '$correo'";
+		$consulta = "SELECT user.UserID FROM user INNER JOIN setup ON user.UserID = setup.SuperAdmin WHERE user.FullName = '$nombre' AND user.Email = '$correo'";
+		
 		$resultado = mysqli_query($conexion, $consulta);
 
-		cerrarConexion($conexion);
-
 		if ($datos = mysqli_fetch_array($resultado)) {
-			return true;
-		} else {
-			return false;
+				return true;
+			} else {
+				return false;
 		}
 	}
+
 
 	function getListaUsuarios() {
 		$conexion = crearConexion();
@@ -75,7 +76,7 @@
 			$consulta = "UPDATE setup SET Autenticación = 1";
 		}
 
-		//$resultado = mysqli_query($conexion, $consulta);
+		$resultado = mysqli_query($conexion, $consulta);
 
 		cerrarConexion($conexion);
 	}

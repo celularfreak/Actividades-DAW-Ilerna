@@ -17,7 +17,7 @@
 	
 
 	function pintaTablaUsuarios(){
-		$listaUsuarios = getUsuarios();
+		$listaUsuarios = getListaUsuarios();
 
 		echo "<table> \n
 				<tr> \n
@@ -31,9 +31,9 @@
 					<td>".$fila['FullName']."</td> \n
 					<td>".$fila['Email']."</td> \n";
 			if ($fila["Enabled"] == 1) {
-				echo "<td class = 'rojo'>".$fila['Enabled']."</td> \n;
+				echo "<td class ='rojo'>".$fila['Enabled']."</td> \n;
 			} else {
-				echo "<td>"".$fila['Enabled']."</td> \n";
+				echo <td>".$fila['Enabled']."</td> \n";
 			}
 		}
 	}
