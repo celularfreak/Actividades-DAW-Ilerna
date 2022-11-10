@@ -15,5 +15,26 @@
 
 	<h1>Lista de artículos</h1>
 
+	<?php
+		if (getPermisos() == 1) {
+			echo "<a href = 'formArticulos.php?Anadir'>Nuevo Producto</a>";
+		}
+	?>
+
+	<?php
+		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != 'autorizado')) {
+			echo "No tienes permisos para acceder a esta página.";
+		} else {
+			if (!isset($_POST["orden"])) {
+				$orden = "ProductID";
+			} else {
+				$orden = $_POST["orden"];
+			}
+			pintaProductos($orden);
+		}
+	?>
+
+	<a href="index.php"> Volver </a>
+	
 </body>
 </html>
