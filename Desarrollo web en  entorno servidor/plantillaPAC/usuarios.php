@@ -12,23 +12,25 @@
 
 		include "funciones.php";
 
-		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != 'superadmin')) {
+		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != "superadmin")) {
 			echo "No tienes permisos para acceder a esta página.";
 		} else {
-			if (isset($_GET['Cambiear'])) {
+			if (isset($_GET['Cambiar'])) {
 				cambiarPermisos();
 			}
-		}	
+			
 	?>
 
-	<p> Los permisos actuales están a <span><?php echo getPermisos(); ?></span> </p>
-	<form action="usuarios.php" action="POST">
-		<p> <input type="submit" name="Modificar" value="Modificar permisos"></p>
-	</form>
+		<p>Los permisos actuales están a <span><?php echo getPermisos(); ?></span></p>
+		<form action="usuarios.php" action="GET">
+			<p><input type="submit" name="Cambiar" value="Cambiar permisos"></p>
+		</form>
 
-	<?php
+		<?php
+
 		pintaTablaUsuarios();
-	?>
+	}	
+		?>
 
 	<a href="index.php">Volver</a>
 

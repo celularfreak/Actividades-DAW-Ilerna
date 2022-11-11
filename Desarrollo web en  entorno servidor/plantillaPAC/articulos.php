@@ -17,12 +17,12 @@
 
 	<?php
 		if (getPermisos() == 1) {
-			echo "<a href = 'formArticulos.php?Anadir'>Nuevo Producto</a>";
+			echo "<a href='formArticulos.php?Anadir'>Nuevo Producto</a>";
 		}
 	?>
 
 	<?php
-		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != 'autorizado')) {
+		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != "autorizado")) {
 			echo "No tienes permisos para acceder a esta página.";
 		} else {
 			if (!isset($_GET["orden"])) {

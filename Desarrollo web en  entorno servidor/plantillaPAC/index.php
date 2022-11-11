@@ -16,7 +16,7 @@
 	<form action="index.php" method="POST">
 		<p><label for="usuario">Usuario: </label><input type ="text" name="usuario"></p>
 		<p><label for="correo">Correo: </label><input type ="email" name="correo"></p>
-		<p><input type="submit" name="Entrar"></p>
+		<p><input type="submit" value ="Entrar" name="Entrar"></p>
 	</form>
 
 	<?php

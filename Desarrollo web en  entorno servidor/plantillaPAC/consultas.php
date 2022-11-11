@@ -8,7 +8,7 @@
 		if (esSuperadmin($nombre, $correo)) {
 			return "superadmin";
 		} else {
-			$consulta = "SELECT FullName, Email, Enabled FROM user WHERE FullName = '$nombre' AND Email = '$correo'";
+			$consulta = "SELECT FullName, Email, Enabled FROM user WHERE FullName = '$nombre' and Email = '$correo'";
 			
 			$resultado = mysqli_query($conexion, $consulta);
 
@@ -30,13 +30,13 @@
 	function esSuperadmin($nombre, $correo){
 		$conexion = crearConexion();
 
-		$consulta = "SELECT user.UserID FROM user INNER JOIN setup ON user.UserID = setup.SuperAdmin WHERE user.FullName = '$nombre' AND user.Email = '$correo'";
+		$consulta = "SELECT user.UserID FROM user INNER JOIN setup ON user.UserID = setup.SuperAdmin WHERE user.FullName = '$nombre' and user.Email = '$correo'";
 		
 		$resultado = mysqli_query($conexion, $consulta);
 
 		if ($datos = mysqli_fetch_array($resultado)) {
 				return true;
-			} else {
+		} else {
 				return false;
 		}
 	}
@@ -72,7 +72,7 @@
 
 		if ($permisos == 1) {
 			$consulta = "UPDATE setup SET Autenticación = 0";
-		} else {
+		} else if(($permisos == 0)) {
 			$consulta = "UPDATE setup SET Autenticación = 1";
 		}
 
@@ -109,8 +109,7 @@
 	function getProductos($orden) {
 		$conexion = crearConexion();
 
-		$consulta = "SELECT product.ProductID, product.Name, product.Cost product.Price, category.Name as Categoria FROM product INNER JOIN category WHERE 
-		product.CategoryID = category.CategoryID ORDER BY $orden";
+		$consulta = "SELECT product.ProductID, product.Name, product.Cost, product.Price, category.Name as Categoria FROM product INNER JOIN category WHERE product.CategoryID = category.CategoryID ORDER BY $orden";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		cerrarConexion($conexion);
