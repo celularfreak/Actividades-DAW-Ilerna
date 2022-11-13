@@ -8,9 +8,9 @@
 
 		while($fila = mysqli_fetch_assoc($categorias)) {
 			if ($fila['CategoryID'] == $defecto) {
-				echo "<option value='".$fila["CategoryID"]."' selected>".$fila["Name"]."</option>";
+				echo "<option value='" . $fila["CategoryID"] . "' selected>" . $fila["Name"] . "</option>";
 			} else {
-				echo "<option value='".$fila["CategoryID"]."'>".$fila["Name"]."</option>";
+				echo "<option value='" . $fila["CategoryID"] . "'>" . $fila["Name"] . "</option>";
 			}
 		}
 	}
@@ -28,10 +28,10 @@
 		
 		while($fila = mysqli_fetch_assoc($listaUsuarios)) {
 			echo "<tr>\n
-					<td>" .$fila['FullName']. "</td>\n
-					<td>" .$fila['Email']. "</td>\n";
+					<td>" . $fila['FullName'] . "</td>\n
+					<td>" . $fila['Email'] . "</td>\n";
 			if ($fila["Enabled"] == 1) {
-				echo "<td class='rojo'>" . $fila['Enabled']. "</td>\n";
+				echo "<td class='rojo'>" . $fila['Enabled'] . "</td>\n";
 			} else {
 				echo "<td>" . $fila['Enabled'] . "</td>\n";
 			}
@@ -61,10 +61,12 @@
 					<td>" . $fila['Categoria'] . "</td>\n";
 
 			if (getPermisos() == 1) {
-				echo "<td><a href='formArticulos.php?Editar'>Editar=" . $fila['ProductID'] . "'>Editar</a> - <a href='formArticulos.php?Borrar=" . $fila['ProducID'] . "'>Borrar</a></tr>\n";
+				echo "<td><a href='formArticulos.php?Editar=" . $fila['ProductID'] . "'>Editar</a> - <a href='formArticulos.php?Borrar=" . $fila['ProductID'] . "'>Borrar</a>
+				</tr>\n";
 			}
 		}
 
-		echo "</table> \n";
+		echo "</table>";
 
 	}
+?>

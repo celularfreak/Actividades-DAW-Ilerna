@@ -7,10 +7,9 @@
 </head>
 <body>
 
-	<?php 
-
-		include "funciones.php";
+	<?php
 	
+		include "funciones.php";
 	?>
 
 	<?php
@@ -23,22 +22,23 @@
 			} else if (isset($_GET["Borrar"])) {
 				$datosProducto = mysqli_fetch_array(getProducto($_GET["Borrar"]));
 			} else {
-				$datosProducto = ["ProductID" => "", "Name" => "", "Cost" => 0, "Price" => 0, "categoria" => "PANTALÓN"];
+				$datosProducto = ["ProductID" => "", "Name" => "", "Cost" => 0, "Price" => 0, "Categoria" => "PANTALÓN"];
 			}
 		}
+
 	?>
 
 	<form action="formArticulos.php" action="POST">
-		<p><label>ID: </label><input type="text" value="<?php echo $datosProducto["ProductID"]; ?>" disabled></p>
 		<input type="hidden" name="id" value="<?php echo $datosProducto["ProductID"]; ?>"></p>
+		<p><label>ID: </label><input type="number" value="<?php echo $datosProducto["ProductID"]; ?>" disabled></p>
 		<p><label>Nombre: </label><input type="text" name="nombre" value="<?php echo $datosProducto["Name"]; ?>"></p>
 		<p><label>Coste: </label><input type="number" name="coste" value="<?php echo $datosProducto["Cost"]; ?>"></p>
 		<p><label>Precio: </label><input type="number" name="precio" value="<?php echo $datosProducto["Price"]; ?>"></p>
 		<p><label>Categoría: </label> <select name="categoria">
-				<?php
-					pintaCategorias($datosProducto["CategoryID"]);
-				?>
-			</select></p>
+			<?php
+				pintaCategorias($datosProducto["ProductID"]);
+			?>
+		</select></p>
 	
 	<?php
 		if (isset($_GET["Editar"])) {
@@ -78,6 +78,8 @@
 			
 		}
 	?>
-				
+
+	<a href="articulos.php">Volver</a>
+	</form>
 </body>
 </html>

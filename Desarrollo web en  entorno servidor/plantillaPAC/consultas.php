@@ -85,7 +85,7 @@
 	function getCategorias() {
 		$conexion = crearConexion();
 
-		$consulta = "SELECT * FROM category";
+		$consulta = "SELECT CategoryID, Name FROM category";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		cerrarConexion($conexion);
@@ -132,7 +132,7 @@
 
 	function borrarProducto($id) {
 		$conexion = crearConexion();
-
+		
 		$consulta = "DELETE FROM product WHERE ProductID = $id";
 		$resultado = mysqli_query($conexion, $consulta);
 
