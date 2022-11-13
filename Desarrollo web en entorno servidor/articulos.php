@@ -15,18 +15,18 @@
 
 	
 	<?php
-		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != "autorizado")) {
+		if (!isset($_COOKIE['userData']) or ($_COOKIE['userData'] != "autorizado")) {
 			echo "No tienes permisos para acceder a esta página.";
 		} else {
-			if (!isset($_GET["orden"])) {
-				$orden = "ProductID";
+			if (!isset($_GET["order"])) {
+				$order = "ProductID";
 			} else {
-				$orden = $_GET["orden"];
+				$order = $_GET["order"];
 			}
 			if (getPermisos() == 1) {
 				echo "<a href='formArticulos.php?Anadir'>Añadir producto</a>";
 			}
-			pintaProductos($orden);
+			pintaProductos($order);
 		}
 	?>
 

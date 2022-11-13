@@ -4,20 +4,20 @@
 
 
 	function pintaCategorias($defecto) {
-		$categorias = getCategorias();
+		$categories = getCategorias();
 
-		while($fila = mysqli_fetch_assoc($categorias)) {
-			if ($fila["CategoryID"] == $defecto) {
-				echo "<option value='" . $fila["CategoryID"] . "'selected>" . $fila["Name"] . "</option>";
+		while($row = mysqli_fetch_assoc($categories)) {
+			if ($row["CategoryID"] == $defecto) {
+				echo "<option value='" . $row["CategoryID"] . "'selected>" . $row["Name"] . "</option>";
 			} else {
-				echo "<option value='" . $fila["CategoryID"] . "'>" . $fila["Name"] . "</option>";
+				echo "<option value='" . $row["CategoryID"] . "'>" . $row["Name"] . "</option>";
 			}
 		}
 	}
 	
 
 	function pintaTablaUsuarios(){
-		$listaUsuarios = getListaUsuarios();
+		$userList = getListaUsuarios();
 
 		echo "<table>\n
 				<tr>\n
@@ -26,42 +26,42 @@
 					<th>Autorizado</th>\n
 				</tr>\n";
 		
-		while($fila = mysqli_fetch_assoc($listaUsuarios)) {
+		while($row = mysqli_fetch_assoc($userList)) {
 			echo "<tr>\n
-					<td>" . $fila['FullName'] . "</td>\n
-					<td>" . $fila['Email'] . "</td>\n";
-			if ($fila["Enabled"] == 1) {
-				echo "<td class='rojo'>" . $fila['Enabled'] . "</td>\n";
+					<td>" . $row['FullName'] . "</td>\n
+					<td>" . $row['Email'] . "</td>\n";
+			if ($row["Enabled"] == 1) {
+				echo "<td class='rojo'>" . $row['Enabled'] . "</td>\n";
 			} else {
-				echo "<td>" . $fila['Enabled'] . "</td>\n";
+				echo "<td>" . $row['Enabled'] . "</td>\n";
 			}
 		}
 	}
 
 		
 	function pintaProductos($orden) {
-		$productos = getProductos($orden);
+		$products = getProductos($orden);
 
 		echo "<table>\n
 				<tr>\n
-					<th><a href='articulos.php?orden=ProductID'>ID</a></th>\n
-					<th><a href='articulos.php?orden=Name'>Nombre</a></th>\n
-					<th><a href='articulos.php?orden=Cost'>Coste</a></th>\n
-					<th><a href='articulos.php?orden=Price'>Precio</a></th>\n
-					<th><a href='articulos.php?orden=Categoria'>Categoria</a></th>\n
+					<th><a href='articulos.php?order=ProductID'>ID</a></th>\n
+					<th><a href='articulos.php?order=Name'>Nombre</a></th>\n
+					<th><a href='articulos.php?order=Cost'>Coste</a></th>\n
+					<th><a href='articulos.php?order=Price'>Precio</a></th>\n
+					<th><a href='articulos.php?order=Categoria'>Categoria</a></th>\n
 					<th>Acciones</th>\n
 				</tr>\n";
 
-		while($fila = mysqli_fetch_assoc($productos)) {
+		while($row = mysqli_fetch_assoc($products)) {
 			echo "<tr>\n
-					<td>" . $fila['ProductID'] . "</td>\n
-					<td>" . $fila['Name'] . "</td>\n
-					<td>" . $fila['Cost'] . "</td>\n
-					<td>" . $fila['Price'] . "</td>\n
-					<td>" . $fila['Categoria'] . "</td>\n";
+					<td>" . $row['ProductID'] . "</td>\n
+					<td>" . $row['Name'] . "</td>\n
+					<td>" . $row['Cost'] . "</td>\n
+					<td>" . $row['Price'] . "</td>\n
+					<td>" . $row['Categoria'] . "</td>\n";
 
 			if (getPermisos() == 1) {
-				echo "<td><a href='formArticulos.php?Editar=" . $fila['ProductID'] . "'>Editar</a> - <a href='formArticulos.php?Borrar=" . $fila['ProductID'] . "'>Borrar</a>
+				echo "<td><a href='formArticulos.php?Editar=" . $row['ProductID'] . "'>Editar</a> - <a href='formArticulos.php?Borrar=" . $row['ProductID'] . "'>Borrar</a>
 				</tr>\n";
 			}
 		}

@@ -12,7 +12,7 @@
 
 		include "funciones.php";
 
-		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != "superadmin")) {
+		if (!isset($_COOKIE['userData']) or ($_COOKIE['userData'] != "superadmin")) {
 			echo "No tienes permisos para acceder a esta página.";
 		} else {
 			if (isset($_GET['Cambiar'])) {

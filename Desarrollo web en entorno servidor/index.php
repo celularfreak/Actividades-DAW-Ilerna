@@ -21,9 +21,9 @@
 		if (isset($_POST['Entrar'])) {
 			$nombre = $_POST['usuario'];
 			$correo = $_POST['correo'];
-			$tipoUsuario = tipoUsuario($nombre, $correo);
-			setcookie("datos", $tipoUsuario, time()+500);
-			switch ($tipoUsuario) {
+			$userType = tipoUsuario($nombre, $correo);
+			setcookie("userData", $userType, time()+500);
+			switch ($userType) {
 				case 'superadmin':
 					echo "Bienvenido $nombre. Pulsa <a href='usuarios.php'>aquí</a> para ver los usuarios.";
 					break;
