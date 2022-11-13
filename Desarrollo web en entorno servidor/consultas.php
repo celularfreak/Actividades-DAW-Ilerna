@@ -85,7 +85,7 @@
 	function getCategorias() {
 		$conexion = crearConexion();
 
-		$consulta = "SELECT CategoryID, Name FROM category";
+		$consulta = "SELECT * FROM category";
 		$resultado = mysqli_query($conexion, $consulta);
 
 		cerrarConexion($conexion);

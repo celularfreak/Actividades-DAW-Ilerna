@@ -7,8 +7,8 @@
 		$categorias = getCategorias();
 
 		while($fila = mysqli_fetch_assoc($categorias)) {
-			if ($fila['CategoryID'] == $defecto) {
-				echo "<option value='" . $fila["CategoryID"] . "' selected>" . $fila["Name"] . "</option>";
+			if ($fila["CategoryID"] == $defecto) {
+				echo "<option value='" . $fila["CategoryID"] . "'selected>" . $fila["Name"] . "</option>";
 			} else {
 				echo "<option value='" . $fila["CategoryID"] . "'>" . $fila["Name"] . "</option>";
 			}

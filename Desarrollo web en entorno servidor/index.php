@@ -8,9 +8,7 @@
 <body>
 
 	<?php
-	
 		include "consultas.php";
-
 	?>
 
 	<form action="index.php" method="POST">
@@ -40,7 +38,6 @@
 					break;
 			}
 		}
-	
 	?>
 		
 </body>

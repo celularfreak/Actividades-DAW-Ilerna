@@ -8,17 +8,13 @@
 <body>
 
 	<?php 
-
 		include "funciones.php";
-
 	?>
 
 	<h1>Lista de artículos</h1>
 
+	
 	<?php
-		if (getPermisos() == 1) {
-			echo "<a href='formArticulos.php?Anadir'>Nuevo Producto</a>";
-		}
 		if (!isset($_COOKIE['datos']) or ($_COOKIE['datos'] != "autorizado")) {
 			echo "No tienes permisos para acceder a esta página.";
 		} else {
@@ -26,6 +22,9 @@
 				$orden = "ProductID";
 			} else {
 				$orden = $_GET["orden"];
+			}
+			if (getPermisos() == 1) {
+				echo "<a href='formArticulos.php?Anadir'>Añadir producto</a>";
 			}
 			pintaProductos($orden);
 		}

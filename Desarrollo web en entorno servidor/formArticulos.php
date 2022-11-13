@@ -8,7 +8,6 @@
 <body>
 
 	<?php
-	
 		include "funciones.php";
 	?>
 
@@ -25,7 +24,6 @@
 				$datosProducto = ["ProductID" => "", "Name" => "", "Cost" => 0, "Price" => 0, "Categoria" => "PANTALÓN"];
 			}
 		}
-
 	?>
 
 	<form action="formArticulos.php" action="POST">
@@ -36,7 +34,7 @@
 		<p><label>Precio: </label><input type="number" name="precio" value="<?php echo $datosProducto["Price"]; ?>"></p>
 		<p><label>Categoría: </label> <select name="categoria">
 			<?php
-				pintaCategorias($datosProducto["ProductID"]);
+				pintaCategorias($datosProducto["CategoryID"]);
 			?>
 		</select></p>
 	
