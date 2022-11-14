@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Gran Turismo Ilerna</title>
+	<link rel="shortcut icon" href="assets/img/GT_icon.png" type="image/x-icon">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="background">
+		<img class="logo" src="assets/img/GT-Ilerna-logo.png" alt="Gran Turismo Ilerna">
+	</div>
+
+	<div class="finish_line">
+		<div class="track">
+			<div class="cars">
+				<img class="car hide" src="assets/img/car1.png" data-id="car1">
+				<img class="car hide" src="assets/img/car2.png" data-id="car2">
+				<img class="car hide" src="assets/img/car3.png" data-id="car3">
+				<img class="car hide" src="assets/img/car4.png" data-id="car4">
+				<img class="car hide" src="assets/img/car5.png" data-id="car5">
+				<img class="car hide" src="assets/img/car6.png" data-id="car6">
+				<img class="car hide" src="assets/img/car7.png" data-id="car7">
+				<img class="car hide" src="assets/img/car8.png" data-id="car8">
+				<img class="car hide" src="assets/img/car9.png" data-id="car9">
+			</div>
+		</div>
+	</div>
+
+<div class="game">
+    <div class="menu">
+        <button id="restart" class="hide">Reiniciar</button>
+    </div>
+    <button id="start">Inicio</button>
+	<label id="dropmenu"><span>Numero de participantes</span>
+        <select id="carNumber">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </label>
+    </div>
+
+	<div id="tabla" class="hide">
+		<table id="posiciones">
+		  <thead>
+			<tr>
+			  <th>Posicion</th>
+			  <th>Coche</th>
+			</tr>
+		  </thead>
+		  <tbody>
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+
+	<script src="assets/js/script.js"></script>
+</body>
+
+</html>
