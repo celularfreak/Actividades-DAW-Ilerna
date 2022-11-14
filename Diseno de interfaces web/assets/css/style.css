@@ -92,8 +92,7 @@ select{
 	display: block;
 }
 .track {
-	border-right: 15px solid rgb(132, 0, 147);
-	width: 95%;
+	width: 100%;
 	background-image: url(assets/img/track.png);
 	background-repeat: no-repeat;
 	background-size: cover;
