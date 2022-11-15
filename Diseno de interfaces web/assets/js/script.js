@@ -9,7 +9,7 @@ $("#carnumber").change(function () {
         $(".car[data-id='" + actual + "']").removeClass("hide"); 
         coches.push({
             "cocheActual": actual,
-            "velocidad": Math.floor(Math.random() * (11 - 1) + 1) 
+            "velocidad": Math.floor(Math.random() * (21 - 1) + 1) 
         }); 
     }
 })
