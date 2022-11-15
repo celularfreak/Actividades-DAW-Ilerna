@@ -1,47 +1,57 @@
+setTimeout(function () {
+    $(".game").removeClass("hide");
+}, 2000);
 
-var coches = [];
+$(".game").addClass("hide");
+
+var cars = [];
 $("#carnumber").change(function () {
-    coches = [];
+    cars = [];
     $(".car").addClass("hide");
-    var numeroDeCoches = $("#carnumber").val(); 
-    for (var i = 1; i <= numeroDeCoches; i++) {
-        var actual = "car" + i;
-        $(".car[data-id='" + actual + "']").removeClass("hide"); 
-        coches.push({
-            "cocheActual": actual,
-            "velocidad": Math.floor(Math.random() * (21 - 1) + 1) 
+	$(".logo").addClass("hide");
+    var numberOfCars = $("#carnumber").val(); 
+    for (var i = 1; i <= numberOfCars; i++) {
+        var current = "car" + i;
+        $(".car[data-id='" + current + "']").removeClass("hide"); 
+        cars.push({
+            "currentCar": current,
+            "speed": Math.floor(Math.random() * (11 - 1) + 1) 
         }); 
     }
 })
-
 
 $("#start").click(function () {
     $("#restart").removeClass("hide");
     $("#table").removeClass("hide");
     $("#dropmenu").addClass("hide");
     $("#start").addClass("hide");
-    
 
-    var posicion = 1;
-    coches.forEach(function (coche) {
-        $(".car[data-id='" + coche["cocheActual"] + "']").animate({
-            marginLeft: "95.9%"
-        }, coche["velocidad"] * 1000, function () {
-            $('#results tbody').append('<tr><td>' + posicion + '</td><td>' + coche["cocheActual"] + '</td></tr>');
-            posicion = posicion + 1;
+    var result = 1;
+    cars.forEach(function (car) {
+        $(".car[data-id='" + car["currentCar"] + "']").animate({
+            marginLeft: "100%"
+        }, car["speed"] * 1000, function () {
+            $('#results tbody').append('<tr><td>' + result + '</td><td>' + car["currentCar"] + '</td></tr>');
+            result = result + 1;
         });
     });
 });
 
 
 $("#restart").click(function () {
-    $("#restart").addClass("hide");
-    $("#table").addClass("hide");
-    $("#start").removeClass("hide");
-    $("#dropmenu").removeClass("hide");
-    $("#start").removeClass("hide");
-    $(".car").animate({
+	$(".car").animate({
         marginLeft: "0"
     });
-    $("#results > tbody").html("");
+	$("#restart").addClass("hide");
+		$("#table").addClass("hide");
+	setTimeout(function () {
+		$("#start").removeClass("hide");
+		$("#dropmenu").removeClass("hide");
+		$("#start").removeClass("hide");
+		$("#results > tbody").html("");
+		$("#carnumber").val("0");
+		$(".logo").removeClass("hide");
+		$(".car").addClass("hide");
+	}, 1000);
+    
 });

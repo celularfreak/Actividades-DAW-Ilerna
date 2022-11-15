@@ -5,13 +5,20 @@ body, html {
 	border: 0px;
 }
 .background {
-	background-image: url('../img/background.jpg');
+	background-image: url(../img/background.jpg);
 	position : fixed;
 	width: 100vw;
 	height: 100vh;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.logo{
+	margin: 0;
+	position: absolute;
+	top: 22%;
+	left: 47%;
+	transform: translate(-50%, -50%);
 }
 
 label {
@@ -34,7 +41,10 @@ select{
 	letter-spacing: 2px;
 	color: red;
 	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
-	left: 33%;
+	display: block;
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #carnumber {
@@ -46,7 +56,10 @@ select{
 	color: white;
 	font-size: 30px;
 	box-shadow: 0 0 20px black;
-	left: 33%;
+	display: block;
+	position: fixed;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #start, #restart {
@@ -67,9 +80,11 @@ select{
 #start{
 	width: 150px;
 	height: 80px;
+	display: block;
+	position: fixed;
 	top: 60%;
-	left: 40.6%;
-	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 #restart{
@@ -87,17 +102,22 @@ select{
 	border: solid 4px red;
 }
 
+.finishline {
+	background-image: url(../img/meta.jpg);
+	position: absolute;
+	width: 100%;
+	box-shadow: 0 0 20px rgb(0, 0, 0);
+}
 .car {
 	width: 79.5px;
 	display: block;
 }
 
 .track {
-	width: 100%;
-	background-image: url('../img/track.jpg');
+	width: 95%;
+	background-image: url(../img/track.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	position: absolute;
 }
 
 .hide {
