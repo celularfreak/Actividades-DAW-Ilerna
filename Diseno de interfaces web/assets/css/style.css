@@ -5,7 +5,7 @@ body, html {
 	border: 0px;
 }
 .background {
-	background-image: url('assets/img/background.jpg');
+	background-image: url('../img/background.jpg');
 	position : fixed;
 	width: 100vw;
 	height: 100vh;
@@ -32,21 +32,21 @@ select{
 #dropmenu {
 	font-size: 40px;
 	letter-spacing: 2px;
-	color: white;
-	text-shadow: 0px 0px 20px black;
+	color: red;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	left: 33%;
 }
 
 #carnumber {
 	background-color: red;
-	border: black;
+	border: solid 4px black;
 	border-radius: 10px;
 	width: 150px;
 	height: 50px;
 	color: white;
-	font-size: 40px;
+	font-size: 30px;
 	box-shadow: 0 0 20px black;
-	left: 40%;
+	left: 33%;
 }
 
 #start, #restart {
@@ -60,7 +60,7 @@ select{
 	color: white;
 	box-shadow: 0 0 20px black;
 	text-align: center;
-	transition: 0.5s;
+	transition: all 0.5s;
 	cursor: pointer;
 }
 
@@ -68,7 +68,7 @@ select{
 	width: 150px;
 	height: 80px;
 	top: 60%;
-	left: 44.8%;
+	left: 40.6%;
 	position: absolute;
 }
 
@@ -78,22 +78,56 @@ select{
 	display: block;
 	position: fixed;
 	top: 60%;
-	left: 48%;
+	left: 50%;
 	transform: translate(-50%, -50%);
   }
 
 #start:hover, #restart:hover {
 	background-color: black;
-	color: red;
+	border: solid 4px red;
 }
 
 .car {
 	width: 79.5px;
 	display: block;
 }
+
 .track {
 	width: 100%;
-	background-image: url(assets/img/track.png);
+	background-image: url('../img/track.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: absolute;
 }
+
+.hide {
+	display: none !important;
+  }
+
+#table {
+	color: white;
+	font-size: 20px;
+	letter-spacing: 3px;
+	margin: 0 auto;
+	margin-left: 80%;
+	position: absolute;
+	bottom:2%;
+	border-collapse: collapse;
+	border-spacing: 1;
+	border-radius: 10px;
+	background: red;
+	overflow:hidden;
+	box-shadow: 0 0 20px black;
+	border: black;
+	border: solid 4px black;
+	overflow: hidden;
+  }
+
+th {
+	padding: 10px;  
+}
+  
+td {
+	text-align: center;
+	background: red;
+}   
