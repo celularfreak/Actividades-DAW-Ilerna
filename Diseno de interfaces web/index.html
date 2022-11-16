@@ -11,10 +11,11 @@
 </head>
 
 <body>
-	<div class="background">
+	<!--Logo de Gran Turismo Ilerna y fondo de pantalla-->
+	<div class="logo_and_background">
 		<img class="logo" src="assets/img/GT-Ilerna-logo.png" alt="Gran Turismo Ilerna">
 	</div>
-
+	<!--Imagenes de la meta, pista y coches-->
 	<div class="finishline">
 		<div class="track">
 			<div class="cars">
@@ -31,13 +32,14 @@
 		</div>
 	</div>
 </div>
-
+<!--Texto sobre los botones-->
 <div class="title"> Numero de participantes</div>
+<!--Botones de Inicio/Reinicio-->
 <div class="game">
     <div class="menu">
         <button id="restart" class="hide">Reiniciar</button>
     	<button id="start">Inicio</button>
-	
+		<!--Menu seleccion numero coches-->
 		<label id="dropmenu">
         	<select id="carnumber">
 				<option value="0">Elige</option>
@@ -53,7 +55,7 @@
         	</select>
    		 </label>
     </div>
-
+	<!--Tabla de resultados-->
 	<div id="table" class="hide">
 		<table id="results">
 		  	<thead>
@@ -68,8 +70,8 @@
 	</div>
 </div>
 </div>
+	<!--Script-->
 	<script src="assets/js/script.js"></script>
-
 </body>
 
 </html>

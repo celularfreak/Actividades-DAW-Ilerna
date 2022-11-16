@@ -1,3 +1,4 @@
+/* Fuente importada desde la carpeta assets/fonts igual que la del logo*/
 @font-face {
 	font-family: 'GranTurismo';
 	src: url('../font/GTfont.ttf') format('truetype');
@@ -12,7 +13,22 @@ body, html {
 	border: 0px;
 }
 
-.background {
+label {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	justify-content: center;
+	align-items: center;
+	display: block;
+}
+
+select{
+	display: block;
+	position: absolute;
+	left: 40%;
+}
+
+.logo_and_background {
 	background-image: url(../img/background.jpg);
 	position : fixed;
 	width: 100vw;
@@ -43,20 +59,28 @@ body, html {
 	letter-spacing: 2px;
 	color: #9B272C;
 }
-label {
+
+.finishline {
+	background-image: url(../img/meta.jpg);
 	position: absolute;
-	top: 50%;
-	left: 25%;
-	justify-content: center;
-	align-items: center;
+	width: 100%;
+	box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+.car {
+	width: 79.5px;
 	display: block;
 }
 
-select{
-	display: block;
-	position: absolute;
-	left: 40%;
+.track {
+	width: 95%;
+	background-image: url(../img/track.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
+
+.hide {
+	display: none !important;
+  }
 
 #dropmenu {
 	font-family: GranTurismo;
@@ -126,28 +150,6 @@ select{
 	background-color: black;
 	border: solid 4px #9B272C;
 }
-
-.finishline {
-	background-image: url(../img/meta.jpg);
-	position: absolute;
-	width: 100%;
-	box-shadow: 0 0 20px rgb(0, 0, 0);
-}
-.car {
-	width: 79.5px;
-	display: block;
-}
-
-.track {
-	width: 95%;
-	background-image: url(../img/track.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.hide {
-	display: none !important;
-  }
 
 #table {
 	font-family: GranTurismo;
