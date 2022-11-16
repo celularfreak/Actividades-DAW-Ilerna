@@ -1,8 +1,10 @@
 setTimeout(function () {
     $(".game").removeClass("hide");
+	$(".title").removeClass("hide");
 }, 2000);
 
 $(".game").addClass("hide");
+$(".title").addClass("hide");
 
 var cars = [];
 $("#carnumber").change(function () {
@@ -52,6 +54,7 @@ $("#restart").click(function () {
 		$("#carnumber").val("0");
 		$(".logo").removeClass("hide");
 		$(".car").addClass("hide");
+		$(".title").addClass("hide");
 	}, 1000);
     
 });
