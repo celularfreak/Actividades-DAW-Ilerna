@@ -1,9 +1,17 @@
+@font-face {
+	font-family: 'GranTurismo';
+	src: url('../font/GTfont.ttf') format('truetype');
+	font-weight: bold;
+	font-display: swap;
+}
+
 body, html {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
 }
+
 .background {
 	background-image: url(../img/background.jpg);
 	position : fixed;
@@ -13,6 +21,7 @@ body, html {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 .logo{
 	margin: 0;
 	position: absolute;
@@ -22,6 +31,7 @@ body, html {
 }
 
 .title{
+	font-family: GranTurismo;
 	position: absolute;
 	top: 40%;
 	left: 41%;
@@ -31,7 +41,7 @@ body, html {
 	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 	font-size: 40px;
 	letter-spacing: 2px;
-	color: red;
+	color: #9B272C;
 }
 label {
 	position: absolute;
@@ -49,9 +59,10 @@ select{
 }
 
 #dropmenu {
+	font-family: GranTurismo;
 	font-size: 40px;
 	letter-spacing: 2px;
-	color: red;
+	color: #9B272C;
 	text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 	display: block;
 	position: fixed;
@@ -60,12 +71,13 @@ select{
 }
 
 #carnumber {
-	background-color: red;
+	font-family: GranTurismo;
+	background-color: #9B272C;
 	border: solid 4px black;
 	border-radius: 10px;
 	width: 150px;
 	height: 50px;
-	color: white;
+	color: #D6D5D2;
 	font-size: 30px;
 	box-shadow: 0 0 20px black;
 	display: block;
@@ -75,14 +87,15 @@ select{
 }
 
 #start, #restart {
+	font-family: GranTurismo;
 	letter-spacing: 2px;
-	background-color: red;
+	background-color: #9B272C;
 	border: black;
 	border-radius: 10px;
 	border: solid 4px black;
 	font-size: 40px;
 	margin-top: 30px;
-	color: white;
+	color: #D6D5D2;
 	box-shadow: 0 0 20px black;
 	text-align: center;
 	transition: all 0.5s;
@@ -111,7 +124,7 @@ select{
 
 #start:hover, #restart:hover {
 	background-color: black;
-	border: solid 4px red;
+	border: solid 4px #9B272C;
 }
 
 .finishline {
@@ -137,7 +150,8 @@ select{
   }
 
 #table {
-	color: white;
+	font-family: GranTurismo;
+	color: #D6D5D2;
 	font-size: 20px;
 	letter-spacing: 3px;
 	margin: 0 auto;
@@ -147,12 +161,8 @@ select{
 	border-collapse: collapse;
 	border-spacing: 1;
 	border-radius: 10px;
-	background: red;
+	background: #9B272C;
 	overflow:hidden;
-	box-shadow: 0 0 20px black;
-	border: black;
-	border: solid 4px black;
-	overflow: hidden;
   }
 
 th {
@@ -161,5 +171,5 @@ th {
   
 td {
 	text-align: center;
-	background: red;
+	background: #9B272C;
 }   

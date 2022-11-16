@@ -11,6 +11,7 @@ $("#carnumber").change(function () {
     cars = [];
     $(".car").addClass("hide");
 	$(".logo").addClass("hide");
+	
     var numberOfCars = $("#carnumber").val(); 
     for (var i = 1; i <= numberOfCars; i++) {
         var current = "car" + i;
@@ -27,7 +28,7 @@ $("#start").click(function () {
     $("#table").removeClass("hide");
     $("#dropmenu").addClass("hide");
     $("#start").addClass("hide");
-
+	$(".title").addClass("hide");
     var result = 1;
     cars.forEach(function (car) {
         $(".car[data-id='" + car["currentCar"] + "']").animate({
@@ -54,7 +55,7 @@ $("#restart").click(function () {
 		$("#carnumber").val("0");
 		$(".logo").removeClass("hide");
 		$(".car").addClass("hide");
-		$(".title").addClass("hide");
+		$(".title").removeClass("hide");
 	}, 1000);
     
 });
