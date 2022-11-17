@@ -147,7 +147,7 @@ select{
   }
 
 #start:hover, #restart:hover {
-	background-color: black;
+	background-color: #2D0304;
 	border: solid 4px #9B272C;
 }
 
@@ -173,5 +173,5 @@ th {
   
 td {
 	text-align: center;
-	background: #9B272C;
+	background: #2D0304;
 }   
