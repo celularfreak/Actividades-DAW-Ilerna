@@ -5,27 +5,12 @@
 	font-weight: bold;
 	font-display: swap;
 }
-/* Estilos de la web y los diferenetes elemeeentos */
+/* Estilos de la web y los diferenetes elementos */
 body, html {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
-}
-
-label {
-	position: absolute;
-	top: 50%;
-	left: 25%;
-	justify-content: center;
-	align-items: center;
-	display: block;
-}
-
-select{
-	display: block;
-	position: absolute;
-	left: 40%;
 }
 
 .logo_and_background {
@@ -64,8 +49,8 @@ select{
 	background-image: url(../img/meta.jpg);
 	position: absolute;
 	width: 100%;
-	box-shadow: 0 0 20px rgb(0, 0, 0);
 }
+
 .car {
 	width: 79.5px;
 	display: block;
@@ -81,6 +66,21 @@ select{
 .hide {
 	display: none !important;
   }
+
+label {
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	justify-content: center;
+	align-items: center;
+	display: block;
+}
+
+select{
+	display: block;
+	position: absolute;
+	left: 40%;
+}
 
 #dropmenu {
 	font-family: GranTurismo;
