@@ -119,9 +119,3 @@ function reset() {
     	}
 	}
 }
-
-
-
-
-
-
